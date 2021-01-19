@@ -1,0 +1,10 @@
+/* line 1, ../sass/portfolio.scss */
+.breadcrumbs.portfolio {
+  background-image: url(../img/portfolio.jpg);
+  background-position: center;
+  background-size: cover;
+}
+/* line 5, ../sass/portfolio.scss */
+.breadcrumbs.portfolio .title {
+  color: #fff;
+}
