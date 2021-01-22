@@ -1,0 +1,29 @@
+.footer {
+  background-color: rgba(1, 34, 79, 0.1);
+}
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+.footer .container .right ul {
+  display: flex;
+  flex-direction: row;
+}
+.footer .container .right ul li {
+  margin-right: 15px;
+}
+.footer .container .right ul li:last-child {
+  margin-right: 0;
+}
+.footer .container .right ul li a {
+  color: #01224f;
+  font-size: 17px;
+  transition: 0.2s;
+}
+.footer .container .right ul li a:hover {
+  color: #e8371a;
+}
+
+/*# sourceMappingURL=footer.css.map */

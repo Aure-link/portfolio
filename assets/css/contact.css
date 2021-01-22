@@ -1,47 +1,24 @@
-/* line 1, ../sass/contact.scss */
 .breadcrumbs.contact {
   background-image: url(../img/contact.jpg);
   background-size: cover;
   background-position: center;
 }
 
-/* line 7, ../sass/contact.scss */
 .contactMe {
   margin-bottom: 75px;
 }
-@media screen and (max-width: 800px) {
-  /* line 7, ../sass/contact.scss */
-  .contactMe {
-    margin-bottom: 30px;
-  }
-}
-/* line 12, ../sass/contact.scss */
 .contactMe .title {
   font-size: 20px;
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 50px;
 }
-@media screen and (max-width: 800px) {
-  /* line 12, ../sass/contact.scss */
-  .contactMe .title {
-    margin-bottom: 25px;
-  }
-}
-/* line 21, ../sass/contact.scss */
 .contactMe .firstLineContact {
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin-bottom: 20px;
 }
-@media screen and (max-width: 600px) {
-  /* line 21, ../sass/contact.scss */
-  .contactMe .firstLineContact {
-    flex-direction: column;
-  }
-}
-/* line 29, ../sass/contact.scss */
 .contactMe .firstLineContact .input {
   width: 48%;
   height: 45px;
@@ -51,19 +28,7 @@
   font-size: 14px;
   box-sizing: border-box;
 }
-@media screen and (max-width: 600px) {
-  /* line 29, ../sass/contact.scss */
-  .contactMe .firstLineContact .input {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  /* line 40, ../sass/contact.scss */
-  .contactMe .firstLineContact .input:last-child {
-    margin-bottom: 0;
-  }
-}
-/* line 47, ../sass/contact.scss */
-.contactMe .secondLineContact .input, .contactMe .secondLineContact .textarea {
+.contactMe .secondLineContact .input {
   width: 100%;
   height: 45px;
   border: 1px solid #ddd;
@@ -73,14 +38,25 @@
   margin-bottom: 20px;
   box-sizing: border-box;
 }
-/* line 57, ../sass/contact.scss */
 .contactMe .secondLineContact .textarea {
+  width: 100%;
+  height: 45px;
+  border: 1px solid #ddd;
+  background-color: transparent;
+  padding-left: 20px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
   height: 150px;
   padding: 14px 20px;
-  font-family: "Dosis",sans-serif;
+  font-family: "Dosis", sans-serif;
   font-size: 16px;
 }
-/* line 64, ../sass/contact.scss */
+.contactMe .lastLineContact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .contactMe .submit {
   background-color: #464646;
   border: 1px solid #464646;
@@ -91,9 +67,32 @@
   text-transform: uppercase;
   transition: all 0.3s ease 0s;
   cursor: pointer;
+  margin-top: 20px;
 }
-/* line 74, ../sass/contact.scss */
 .contactMe .submit:hover {
   background-color: transparent;
   color: #464646;
 }
+
+@media screen and (max-width: 800px) {
+  .contactMe {
+    margin-bottom: 30px;
+  }
+  .contactMe .title {
+    margin-bottom: 25px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .contactMe .firstLineContact {
+    flex-direction: column;
+  }
+  .contactMe .firstLineContact .input {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .contactMe .firstLineContact .input:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/*# sourceMappingURL=contact.css.map */

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description"
+    content="Bienvenue sur mon portfolio : un endroit où il fait bon vivre et où le soleil brille. Bonne visite !" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+  <title>Aurélien GUILLIET</title>
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./assets/css/animate.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="icon" href="assets/img/favicon.ico" />
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="loader"></div>
+    <div class="navbar">
+      <div class="container">
+        <div class="left">
+          <div class="logo"><a href="/">Aurelien</a></div>
+        </div>
+        <i class="fa fa-bars hamburger"></i>
+        <div class="right">
+          <ul>
+            <li>
+              <router-link to="/">Accueil</router-link>
+            </li>
+            <li>
+              <router-link to="/a-propos">A propos de moi</router-link>
+            </li>
+            <li>
+              <router-link to="/portfolio">Portfolio</router-link>
+            </li>
+            <li>
+              <router-link to="/mes-competences">Mes compétences</router-link>
+            </li>
+            <li>
+              <router-link to="/contact">Contact</router-link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <router-view></router-view>
+  </div>
+  <script type="text/x-template" id="home">
+      <div class="home-container">
+        <div class="slider">
+          <div class="container">
+            <div class="slider-info">
+              <div class="info">
+                <h1>Salut ! C'est moi Aurélien</h1>
+                <span>UX Designer et Développeur Front-end</span>
+              </div>
+            </div>
+            <a class="js-scrollTo" href="#work"><span></span><span></span><span></span></a>
+          </div>
+        </div>
+        <div class="work">
+          <div class="container">
+            <h1 class="title">Mes derniers travaux</h1>
+            <div class="allWork">
+              <div class="line">
+                <div v-for="project in projects" :key="project.id" @click: class="bloc">
+                  <a v-bind:href="project.link">
+                    <div class="filter"></div>
+                  <img v-bind:src="project.img" alt="">
+                    <!--<div class="filter"></div>-->
+                    <div class="topInfo">
+                      <div class="date">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        {{project.date}}
+                      </div>
+                    </div>
+                    <div class="info">
+                      <h2>{{project.title}}</h2>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="more" style="display:none;">
+                <a class="button" href="#lineWork"> Voir plus</a>
+              </div>
+              <div class="line" id="lineWork">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+
+  <script type="text/x-template" id="about">
+      <div class="about-container">
+
+      
+      <div class="breadcrumbs about">
+        <div class="container">
+          <div class="left">
+            <h1 class="title">A propos de moi</h1>
+          </div>
+          <div class="right">
+            <ul>
+              <li>
+                <a href="/">Accueil </a>/
+              </li>
+              <li>
+                A propos de moi
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="presentation">
+        <div class="container">
+          <div class="left">
+            <h1 class="title">
+              Qui Suis-je ?
+            </h1>
+            <div class="small_description">
+              Geek et passionné de musique, j'aime faire des rencontres et partager ma joie de vivre avec tous les gens que je rencontre. D'un naturel joyeux, je trouve mon dynamisme dans mes projets et dans la volonté d'en apprendre toujours plus !
+            </div>
+            <div class="idea">
+              <ul>
+                <li>Musicien dans l'âme depuis toujours.</li>
+                <li>Développeur/UX Designer passionné.</li>
+                <li>Amoureux des rencontres et du savoir.</li>
+                <li><a href="cv.pdf" target="_blank">Découvrir mon CV</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="right"></div>
+        </div>
+      </div>
+      <div class="parcours">
+        <div class="container">
+          <div class="left">
+            <h1 class="title">
+              Mon parcours 
+            </h1>
+            <div 
+            v-for="(item, index) in parcours"
+            v-bind:item="item"
+            v-bind:index="index"
+            v-bind:key="item.id"
+            class="content">
+              <div class="line">
+                <div class="date">
+                  {{item.date}}
+                </div>
+                <div class="value">
+                  {{item.ecole}}
+                </div>
+                <div v-on:click="BecomeVisible(index)" class="more">
+                  Voir plus
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <div v-for="item in parcours" v-if="item.visible" class="content">
+              <div class="illu">
+                <div class="title">{{item.title}}</div>
+                <img v-bind:src="item.img" alt="">
+              </div>
+              <div class="explication">
+                <div class="bold">Ce que j'ai appris : </div>
+                <span v-html="item.description_first"></span>
+                <div class="bold">Ce que je retiens : </div>  
+                <span v-html="item.description_second"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </script>
+
+  <div class="footer">
+    <div class="container">
+      <div class="left">
+        &copy; Aurélien GUILLIET -
+      </div>
+      <div class="right">
+        <ul>
+          <li><a href="https://github.com/Aure-link/" target="_blank"><i class="fa fa-github"
+                aria-hidden="true"></i></a></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="./assets/js/jquery-3.1.1.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vue-router@3.4.9/dist/vue-router.js"></script>
+  <script src="./assets/js/vue.js"></script>
+</body>
+
+</html>

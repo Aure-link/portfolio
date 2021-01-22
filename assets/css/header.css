@@ -1,0 +1,122 @@
+.navbar {
+  max-height: 80px;
+  min-height: 80px;
+  background-color: white;
+  border-bottom: 1px solid #e7e7e7;
+  display: flex;
+  align-items: center;
+}
+.navbar .left {
+  width: 10%;
+  display: inline-flex;
+  align-items: flex-start;
+}
+.navbar .left .logo {
+  width: 100%;
+}
+.navbar .left .logo a {
+  color: #222;
+  font-family: "Dosis", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.navbar .hamburger {
+  float: right;
+  display: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+.navbar .right {
+  width: 89%;
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.navbar .right ul li {
+  display: inline-block;
+  margin-right: 30px;
+  text-transform: uppercase;
+}
+.navbar .right ul li a {
+  font-family: "Lato", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  position: relative;
+  text-transform: uppercase;
+  color: #01224f;
+  transition: 0.2s;
+}
+.navbar .right ul li a:hover {
+  color: #e8371a;
+}
+.navbar .right ul li:last-child {
+  margin-right: 0;
+}
+.navbar .right ul li.dropdown {
+  position: relative;
+}
+.navbar .right ul li.dropdown a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.navbar .right ul .selection {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  top: 77px;
+  right: -51px;
+  padding: 5px 30px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-top: none;
+}
+.navbar .right ul .selection ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.navbar .right ul .selection ul li {
+  padding: 10px 20px;
+  margin: 0;
+  display: initial;
+}
+
+@media screen and (max-width: 800px) {
+  .navbar {
+    display: flex;
+    max-height: inherit;
+  }
+  .navbar .left {
+    margin-left: 5%;
+  }
+  .navbar .hamburger {
+    display: block;
+    margin-right: 5%;
+  }
+  .navbar .right {
+    display: none;
+    width: 100%;
+    background-color: #fff;
+  }
+  .navbar .right ul li {
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    margin: 0;
+  }
+  .navbar .right ul li:first-child {
+    margin-top: 20px;
+  }
+  .navbar .right ul li:last-child {
+    padding-bottom: 30px;
+  }
+  .navbar .container {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=header.css.map */

@@ -1,0 +1,205 @@
+@charset "UTF-8";
+.breadcrumbs.about {
+  background-image: url(../img/aboutme.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.presentation {
+  margin-bottom: 50px;
+}
+.presentation .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.presentation .container .left {
+  width: 55%;
+}
+.presentation .container .left .small_description {
+  line-height: 28px;
+  margin-bottom: 50px;
+}
+.presentation .container .left .idea ul {
+  display: flex;
+  flex-direction: column;
+}
+.presentation .container .left .idea ul li {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #f6f6f6;
+  padding: 15px 0;
+  letter-spacing: 1px;
+}
+.presentation .container .left .idea ul li a {
+  color: #000;
+  transition: 0.3s;
+}
+.presentation .container .left .idea ul li a:hover {
+  color: #e8371a;
+}
+.presentation .container .left .idea ul li:last-child {
+  margin-bottom: 0;
+  border-bottom: 1px solid #f6f6f6;
+}
+.presentation .container .left .idea ul li:before {
+  content: "";
+  font-family: FontAwesome;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: inherit;
+  margin-right: 10px;
+  color: #01224f;
+}
+.presentation .container .right {
+  background-image: url(../img/pictureMe.jpg);
+  height: 450px;
+  width: 40%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  outline: 1px solid #000;
+  outline-offset: 8px;
+}
+
+@media screen and (max-width: 800px) {
+  .presentation {
+    margin-bottom: 30px;
+  }
+  .presentation .container {
+    flex-direction: column;
+  }
+  .presentation .container .left .small_description {
+    margin-bottom: 25px;
+  }
+  .presentation .container .left .idea {
+    margin-bottom: 25px;
+  }
+  .presentation .container .title {
+    text-align: center;
+  }
+  .presentation .container .right {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: contain;
+  }
+}
+@media screen and (max-width: 800px) {
+  .presentation .container .left {
+    width: 100%;
+  }
+}
+.parcours {
+  margin-bottom: 75px;
+}
+.parcours .container {
+  display: flex;
+  justify-content: space-between;
+}
+.parcours .container .left {
+  width: 55%;
+}
+.parcours .container .left .title {
+  margin-bottom: 20px;
+}
+.parcours .container .right {
+  width: 40%;
+}
+.parcours .container .right .content .illu img {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+  outline: 1px solid #000;
+  outline-offset: 8px;
+  margin-bottom: 25px;
+}
+.parcours .container .right .content .illu .title {
+  font-size: 18px;
+  color: #01224f;
+  margin-bottom: 20px;
+}
+.parcours .container .right .content .explication .bold {
+  font-weight: bold;
+  margin: 10px 0;
+}
+.parcours .container .right .content .explication p {
+  line-height: 25px;
+  margin-bottom: 10px;
+}
+.parcours .container .right .content.visible {
+  display: block;
+}
+.parcours .content .line {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #f6f6f6;
+  padding: 30px 0;
+  letter-spacing: 1px;
+  position: relative;
+}
+.parcours .content .line .date {
+  margin-right: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.parcours .content .line:before {
+  content: "";
+  font-family: FontAwesome;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: inherit;
+  margin-right: 10px;
+  color: #01224f;
+}
+.parcours .content .line .more {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+  top: 50%;
+  transform: translate(0, -50%);
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #01224f;
+  letter-spacing: initial;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 10px;
+}
+.parcours .content .line .more:hover {
+  color: #e8371a;
+}
+
+@media screen and (max-width: 1200px) {
+  .parcours .container {
+    flex-direction: column;
+  }
+  .parcours .container .left {
+    width: 100%;
+  }
+  .parcours .container .right {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .parcours .content .line {
+    flex-direction: column;
+    padding: 15px 0;
+  }
+  .parcours .content .line .more {
+    opacity: 0;
+  }
+  .parcours .content .line:before {
+    margin-bottom: 10px;
+    transform: rotate(90deg);
+  }
+}
+
+/*# sourceMappingURL=about.css.map */
