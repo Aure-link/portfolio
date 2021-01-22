@@ -71,8 +71,7 @@
                 <div v-for="project in projects" :key="project.id" @click: class="bloc">
                   <a v-bind:href="project.link">
                     <div class="filter"></div>
-                  <img v-bind:src="project.img" alt="">
-                    <!--<div class="filter"></div>-->
+                  <img v-bind:src="project.img" alt="" class="bloc-img">
                     <div class="topInfo">
                       <div class="date">
                         <i class="fa fa-calendar" aria-hidden="true"></i>
@@ -85,21 +84,14 @@
                   </a>
                 </div>
               </div>
-              <div class="more" style="display:none;">
-                <a class="button" href="#lineWork"> Voir plus</a>
-              </div>
-              <div class="line" id="lineWork">
-              </div>
             </div>
           </div>
         </div>
       </div>
-    </script>
+  </script>
 
   <script type="text/x-template" id="about">
       <div class="about-container">
-
-      
       <div class="breadcrumbs about">
         <div class="container">
           <div class="left">
@@ -181,12 +173,187 @@
         </div>
       </div>
     </div>
-    </script>
+  </script>
+
+  <script type="text/x-template" id="portfolio">
+    <div class="portfolio-container">
+      <div class="breadcrumbs portfolio">
+        <div class="container">
+          <div class="left">
+            <h1 class="title">portfolio</h1>
+          </div>
+          <div class="right">
+            <ul>
+              <li>
+                <a href="/">Accueil </a>/
+              </li>
+              <li>
+                portfolio
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="portfolio">
+        <div class="work" id="work">
+          <div class="container">
+            <h1 class="title">Mes travaux</h1>
+            <div class="allWork">
+              <div class="line">
+                <div v-for="project in projects" :key="project.id" @click: class="bloc">
+                  <router-link :to="{path: '/portfolio/' + project.id}">
+                    <div class="filter"></div>
+                  <img v-bind:src="project.img" alt="" class="bloc-img">
+                    <div class="topInfo">
+                      <div class="date">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        {{project.date}}
+                      </div>
+                    </div>
+                    <div class="info">
+                      <h2>{{project.title}}</h2>
+                    </div>
+                  </router-link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
+
+  <script type="text/x-template" id="portfolioItem">
+    <div class="portfolioItem-container">
+      <div class="moreInfo">
+        <div class="container">
+          <div v-for="project in projects" v-if="$route.params.id == project.id" class="content">
+            <div class="left">
+              <div class="explication">
+                <div class="title animated lightSpeedIn">{{project.title}}</div>
+                <div class="info">
+                  {{project.text}}
+                </div>
+                <div class="myWork info">
+                  {{project.resume}}
+                </div>
+                <div v-html="project.description" class="desc info">
+                </div>
+
+                <div v-if="project.livrables" class="myWork info livrables">
+                  Les livrables :
+                </div>
+                <div v-html="project.livrables" class="livrables info">
+                </div>
+              </div>
+              <div class="plus">
+                <a class="button" v-bind:href="project.link" target="_blank">Voir le site</a>
+              </div>
+            </div>
+            <div class="right">
+              <img class="img" width="100%" height="325px" v-bind:src="project.img">
+              <div class="infos">
+                <div class="title"></div>
+                <div class="date"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
+
+  <script type="text/x-template" id="skills">
+    <div class="skills-container">
+      <div class="breadcrumbs skills">
+        <div class="container">
+            <div class="left">
+                <h1 class="title">Mes compétences</h1>
+            </div>
+            <div class="right">
+                <ul>
+                    <li>
+                        <a href="/">Accueil </a>/
+                    </li>
+                    <li>
+                        compétences
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="skill">
+      <div class="container">
+          <h1 class="title">Mes compétences</h1>
+          <div class="allSkills">
+              <div class="line">
+                  <div v-for="skill in skills" class="bloc">
+                      <div class="icons">
+                          <i v-bind:class="skill.code"></i>
+                      </div>
+                      <div class="title">
+                          {{skill.title}}
+                      </div>
+                      <div class="info">
+                        {{skill.info}}                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+    </div>
+  </script>
+
+  <script type="text/x-template" id="contact">
+    <div class="contact-container">
+      <div class="breadcrumbs contact">
+        <div class="container">
+          <div class="left">
+            <h1 class="title">Contact</h1>
+          </div>
+          <div class="right">
+            <ul>
+              <li>
+                <a href="/">Accueil </a>/
+              </li>
+              <li>
+                Contact
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contactMe">
+        <div class="container">
+          <div class="title">
+            Restons en contact !
+          </div>
+          <form action="send.php" method="POST" id="contact">
+            <div class="firstLineContact">
+              <input class="input" id="nom" name="nom" placeholder="Nom" type="text">
+              <input class="input" id="email" name="email" placeholder="Email" type="email">
+            </div>
+            <div class="secondLineContact">
+              <input class="input" id="sujet" name="sujet" placeholder="Objet" type="text">
+              <textarea class="textarea" id="message" name="message" placeholder="Votre message ici ..." type="text"></textarea>
+            </div>
+            <div class="lastLineContact">
+              <div class="g-recaptcha" data-sitekey="6LcdMx4UAAAAAEIvG-jwboDabcvOhQhOfBe_ROrb"></div>
+              <button type="submit" class="submit" name="submit">Envoyer</button>
+            </div>
+      
+          </form>
+        </div>
+      </div>
+    </div>
+  </script>
 
   <div class="footer">
     <div class="container">
-      <div class="left">
-        &copy; Aurélien GUILLIET -
+      <div class="left" id="copyright">
+        &copy; Aurélien GUILLIET - {{ new Date().getFullYear() }}
       </div>
       <div class="right">
         <ul>

@@ -5,6 +5,9 @@
 @import 'footer.scss';
 @import 'home.scss';
 @import 'about.scss';
+@import 'skills.scss';
+@import 'contact.scss';
+@import 'more.scss';
 
 body {
     font-family: "Dosis",sans-serif;
@@ -44,6 +47,8 @@ a {
 	display: flex;
 	align-items: center;
 	position: relative;
+	background-position: center;
+	background-size: cover;
 	&:after {
 		content: '';
 		position: absolute;
@@ -52,6 +57,9 @@ a {
 		top: 0;
 		left: 0;
 		background-color: rgba(0, 0, 0, 0.4);
+	}
+	&.portfolio {
+		background-image: url(../img/portfolio.jpg);
 	}
 	.container {
 		display: flex;
@@ -89,16 +97,13 @@ a {
 	}
 	.allWork {
 		display: flex;
-		flex-direction: column;
 		.line {
 			display: flex;
 			flex-direction: row;
 			width: 100%;
 			margin-bottom: 30px;
 			.bloc {
-				position: relative;
 				display: flex;
-				justify-content: space-between;
 				width: 100%;
 				justify-content: center;
 				height: 400px;
@@ -129,6 +134,12 @@ a {
 					&:hover {
 						background-color: transparent;
 					}
+				}
+				.bloc-img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					object-position: top;
 				}
 				.info {
 					position: absolute;

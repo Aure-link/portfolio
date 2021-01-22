@@ -1,8 +1,6 @@
 @charset "UTF-8";
 .breadcrumbs.about {
   background-image: url(../img/aboutme.jpg);
-  background-size: cover;
-  background-position: center;
 }
 
 .presentation {

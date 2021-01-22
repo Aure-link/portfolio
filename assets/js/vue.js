@@ -25,7 +25,7 @@ const projects = [
     },
     {
         id: 3,
-        title: "Réflexion et wireframes du site Smartfone.",
+        title: "Réflexion et wireframes du site Smartfone",
         text: "Réalisation d'une étude complète dans le cadre de la création d'un site de rachat de smartphones.",
         resume: "Brief initial : Création d'un site ayant pour usage le rachat de smartphones en provenance des Etats-unis afin d'être revendu reconditionnés en France.",
         description: "J'ai consacré la première partie de mon temps à effectuer des recherches sur le sujet. <br/> - Une étude du marché des téléphones reconditionnés, <br/> - Les principaux acteurs en place, <br/> - Les utilisateurs de ce genre de services.<br/><br/>J'ai participer à de nombreuses réunions avec les clients, pour me nourir au maximum de leur savoir et de leurs connaissances.",
@@ -69,6 +69,33 @@ const parcours = [
         visible: false
     }
 ];
+
+const skills = [
+    {
+        id: 1,
+        title: "Développement web",
+        info: "Développeur front pendant plus de 3 ans, j’ai acquis des compétences dans le développement sur Framework, « from scratch » ou à partir de CMS.",
+        code: "fa fa-code"
+    },
+    {
+        id: 1,
+        title: "UX Design",
+        info: "Après un master en UX Design en parallèle d’une alternance en tant qu’UX Designer, les besoins utilisateurs et l’accessibilité des sites web est devenu primordiale pour moi.",
+        code: "fa fa-book"
+    },
+    {
+        id: 1,
+        title: "Relations Humaines",
+        info: "Toujours dans la volonté de partager, je n'hésite pas à proposer mes idées ou mes découvertes à mon entourage quelques en soit les domaines.",
+        code: "fa fa-handshake-o"
+    }
+]
+
+//copyright date
+let copyrightDate = new Vue({
+    el: "#copyright"
+})
+
 const Home = {
     template: '#home',
     name: 'Home',
@@ -97,15 +124,34 @@ const About = {
     }
 }
 const Portfolio = {
-    template: '<p>Portfolio</p>',
-    name: 'Portfolio'
+    template: '#portfolio',
+    name: 'Portfolio',
+    data () {
+        return {
+            projects
+        }
+    }
+}
+const PortfolioItem = {
+    template: '#portfolioItem',
+    name: 'PortfolioItem',
+    data () {
+        return {
+            projects
+        }
+    }
 }
 const Skills = {
-    template: '<p>Mes compétences</p>',
-    name: 'Skills'
+    template: '#skills',
+    name: 'Skills',
+    data () {
+        return {
+            skills
+        }
+    }
 }
 const Contact = {
-    template: '<p>Contact</p>',
+    template: '#contact',
     name: 'Contact'
 }
 
@@ -113,9 +159,14 @@ const Contact = {
 const routes = [
     { path: '/', component: Home },
     { path: '/a-propos', component: About },
-    { path: '/portfolio.php', component: Portfolio },
-    { path: '/mes-competences.php', component: Skills },
-    { path: '/contact.php', component: Contact }
+    { path: '/portfolio', component: Portfolio },
+    { 
+        path: '/portfolio/:id', 
+        component: PortfolioItem,
+        name: 'PortfolioItem'    
+    },
+    { path: '/mes-competences', component: Skills },
+    { path: '/contact', component: Contact }
 ]
 const router = new VueRouter({
     routes

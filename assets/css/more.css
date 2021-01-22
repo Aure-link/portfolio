@@ -1,0 +1,88 @@
+@charset "UTF-8";
+.moreInfo .content {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+.moreInfo .content .left {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 50px;
+}
+.moreInfo .content .left .title {
+  font-size: 25px;
+  margin: 10px 0 30px 0;
+  color: #01224f;
+}
+.moreInfo .content .left .info {
+  line-height: 25px;
+  margin-bottom: 25px;
+}
+.moreInfo .content .left .info.livrables {
+  margin-bottom: 5px;
+}
+.moreInfo .content .left .myWork:before {
+  content: "";
+  font-family: FontAwesome;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: inherit;
+  margin-right: 10px;
+  color: #01224f;
+}
+.moreInfo .content .left .button {
+  display: inline-flex;
+  padding: 10px 20px;
+  background-color: rgba(1, 34, 79, 0.1);
+  outline: 1px solid rgba(1, 34, 79, 0.1);
+  outline-offset: 3px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: 25px;
+}
+.moreInfo .content .left .button:hover {
+  background-color: #01224f;
+  color: #fff;
+}
+.moreInfo .content .right {
+  width: 100%;
+  height: 650px;
+  overflow-y: scroll;
+  outline: 1px solid rgba(1, 34, 79, 0.1);
+  outline-offset: 3px;
+}
+.moreInfo .content .right img {
+  width: 100%;
+  height: auto;
+  object-position: top;
+}
+.moreInfo .content .right iframe {
+  display: inline-flex;
+  padding: 3px 3px;
+  outline: 1px solid rgba(1, 34, 79, 0.1);
+  outline-offset: 3px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+@media screen and (max-width: 800px) {
+  .moreInfo .content {
+    display: block;
+  }
+  .moreInfo .content .left {
+    margin-right: 0;
+    margin-bottom: 50px;
+  }
+  .moreInfo .content .left .button {
+    float: right;
+  }
+
+  .contactMe .lastLineContact {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/*# sourceMappingURL=more.css.map */
